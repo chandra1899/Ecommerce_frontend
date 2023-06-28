@@ -1,6 +1,5 @@
 import React from 'react'
 import logo from '../assets/logo.png'
-import googleLogo from '../assets/google.png'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
@@ -14,11 +13,22 @@ const Login = () => {
   const isVerify=useSelector((state)=>state.isVerify.isVerify)
   const dispatch=useDispatch()
 
-  const submit=()=>{
-
-  }
-  const googleLogin=()=>{
-
+  const submit=async ()=>{
+    let res=await fetch("http://localhost:8000/api/user/create-session",{
+      method:"POST",
+      headers:{
+          "Content-Type":"application/json"
+      },
+      credentials:'include', 
+      body:JSON.stringify({
+          email:formik1.values.email,
+          password:formik2.values.password
+      })
+    })
+    if(res.status===200){
+      // window.alert('sucessfully logged in')
+      navigate('/');
+    }
   }
   const formik1=useFormik({
     initialValues:{
@@ -44,6 +54,7 @@ const Login = () => {
         .matches(/[^\w]/, 'Password requires a symbol')
         .required('required'),
     }),
+    onSubmit:submit
   })
   const formik3 = useFormik({
     initialValues: {
@@ -55,7 +66,6 @@ const Login = () => {
       .matches(/[0-9]/, 'Password requires a number')
       .required('required'),
     }),
-    onSubmit:submit
   });
   const handleKeyEnter1=(e)=>{
     if(e.key=='Enter'){
@@ -135,16 +145,17 @@ const Login = () => {
         </label>
       </form>}
       {isEmail && !isVerify && <button className='w-[100%] my-1 h-[37px] hover:bg-violet-600 font-medium text-[1.1rem] bg-violet-500 ' onClick={formik1.handleSubmit}>continue</button>}
+      {isEmail && !isVerify && <p className='font-poppins text-[0.9rem] mt-3'>By continuing, you agree to ecommerce's  <span className='text-[0.89rem] text-[#4381fe] hover:text-[#194eb9] hover:underline cursor-pointer'>Conditions of Use</span>  and <span className='text-[0.89rem] text-[#4381fe] hover:text-[#194eb9] hover:underline cursor-pointer'>Privacy Notice</span>.</p>}
       {/* {isEmail && !isVerify && <p className='flex justify-center items-center mt-3'>-- OR --</p>}
       {isEmail && !isVerify && <button className='w-[100%] mt-3 h-[37px] hover:bg-slate-200 border-2 border-slate-500 font-medium text-[1.1rem] bg-slate-100 flex justify-center items-center' onClick={googleLogin}>
         <img src={googleLogo} alt="googleLogo" className='h-[35px] w-[35px]' />
         </button>} */}
-      {!isEmail && !isVerify && <button className='w-[100%] my-1 h-[37px] hover:bg-violet-600 font-medium text-[1.1rem] bg-violet-500 rounded-lg' onClick={formik2.handleSubmit}>Sign in</button>}
+      {!isEmail && !isVerify && <button className='w-[100%] my-1 h-[37px] hover:bg-violet-600 font-medium text-[1.1rem] bg-violet-500 rounded-lg' onClick={formik2.handleSubmit}>Login</button>}
       {isVerify && <button className='w-[100%] -my-2 h-[37px] hover:bg-violet-600 font-medium text-[1.1rem] bg-violet-500 rounded-lg' onClick={formik3.handleSubmit}>continue</button>}
      {isVerify && <p className='flex justify-center items-center mt-6 text-[#4381fe] hover:text-[#194eb9] hover:underline cursor-pointer'>Resend OTP</p>}
       </div>
        {isEmail && !isVerify && <p className='my-9 font-poppins opacity-75'>--------- &nbsp; New to ecommerce &nbsp;---------</p>}
-     {isEmail && !isVerify && <button className='w-[350px] bg-white shadow-xl hover:bg-slate-100 h-[35px]' onClick={()=>{navigate('/signUp')}}>Create account</button>}
+     {isEmail && !isVerify && <button className='w-[350px] bg-white shadow-xl hover:bg-slate-100 h-[35px]' onClick={()=>{navigate('/signup')}}>Create account</button>}
     </div>
   )
 }

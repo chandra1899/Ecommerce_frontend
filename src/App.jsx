@@ -10,11 +10,11 @@ const App = () => {
   const location=useLocation()
   return (
     <div>
-     {location.pathname!=='/login' && location.pathname!=='/signUp' && location.pathname!=='/verification' && <Navbar/>}
+     {location.pathname!=='/login' && location.pathname!=='/signup' && location.pathname!=='/verification' && <Navbar/>}
       <Routes >
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>} />
-        <Route exact path='/signUp' element={<SignUp/>} />
+        <Route exact path='/signup' element={<SignUp/>} />
         <Route exact path='/verification' element={<Verification/>} />
       </Routes>
     </div>

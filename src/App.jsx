@@ -1,5 +1,5 @@
 import React from 'react'
-import { Login ,Home,SignUp,Navbar,Verification} from './components';
+import { Login ,Home,SignUp,Navbar,Verification,SideBar} from './components';
 import {
   Routes,
   Route
@@ -11,6 +11,7 @@ const App = () => {
   return (
     <div>
      {location.pathname!=='/login' && location.pathname!=='/signup' && location.pathname!=='/verification' && <Navbar/>}
+     <SideBar/>
       <Routes >
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>} />

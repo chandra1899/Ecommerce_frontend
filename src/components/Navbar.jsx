@@ -8,7 +8,7 @@ const Navbar = () => {
   const dispatch=useDispatch()
 
   return (
-    <div className='w-[100vw] h-[50px] fixed top-0 text-white bg-blue-600 flex items-center px-2'>
+    <div className='w-[100vw] h-[50px] fixed top-0 text-white bg-black flex items-center px-2 z-[1]'>
       <img src={menu} alt="menu" className='h-[35px] w-[35px] cursor-pointer' onClick={()=>{dispatch(sideBar.toggle())}}/>
     </div>
   )

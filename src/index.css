@@ -20,7 +20,7 @@
   --bodyColor: "#000000";
 }
 body {
-  background-color: var(--bodyColor);
+  background-color: rgb(229 231 235);
   overflow: scroll;
 }
 

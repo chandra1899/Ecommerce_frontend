@@ -4,6 +4,9 @@ import SignUp from './SignUp'
 import Navbar from './Navbar'
 import Verification from './Verification'
 import SideBar from './SideBar'
+import PhotoSlider from './PhotoSLider'
+import ProductCard from './ProductCard'
+import SwiperComponent from './SwiperComponent'
 
 export {
     Home,
@@ -11,5 +14,8 @@ export {
     SignUp,
     Navbar,
     Verification,
-    SideBar
+    SideBar,
+    PhotoSlider,
+    ProductCard,
+    SwiperComponent
 }

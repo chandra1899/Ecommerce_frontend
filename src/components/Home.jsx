@@ -1,9 +1,8 @@
-import React from 'react'
-import { PhotoSlider,ProductCard ,SwiperComponent} from '.'
+import React,{useEffect} from 'react'
+import { Footer, PhotoSlider,ProductCard ,SwiperComponent,SwiperComponent2} from '.'
 import {motion} from 'framer-motion'
 import {fadeIn,textVariant} from '../utils/motion'
 import { SectionWrapper } from '../hoc'
-
 
 const products=['boys','girls','men' ,'women'];
 const product1=['boys','girls','men'];
@@ -20,10 +19,13 @@ const Card=({product,index})=>(
 )
 
 const Home = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
-    <div className=''>
+    <div className='flex flex-col justify-center items-center'>
     <PhotoSlider/>
-    <div className='absolute top-[40vh] mt-20 flex flex-wrap gap-16 px-10'>
+    <div className='absolute top-[40vh] mt-20 flex flex-wrap gap-20 px-10'>
     {products.map((product,index)=>(
       <Card product={product} index={index}/>
     ))}
@@ -42,6 +44,8 @@ const Home = () => {
       </div>
       </div>
       <SwiperComponent/>
+      <SwiperComponent2/>
+      <Footer/>
     </div>
     </div>
   )

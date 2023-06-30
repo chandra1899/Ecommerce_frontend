@@ -1,5 +1,5 @@
 import React from 'react'
-import { Login ,Home,SignUp,Navbar,Verification,SideBar} from './components';
+import { Login ,Home,SignUp,Navbar,Verification,SideBar,Footer} from './components';
 import {
   Routes,
   Route
@@ -18,6 +18,7 @@ const App = () => {
         <Route exact path='/signup' element={<SignUp/>} />
         <Route exact path='/verification' element={<Verification/>} />
       </Routes>
+      {/* <Footer/> */}
     </div>
   )
 }

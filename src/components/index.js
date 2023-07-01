@@ -6,10 +6,12 @@ import Verification from './Verification'
 import SideBar from './SideBar'
 import PhotoSlider from './PhotoSLider'
 import ProductCard from './ProductCard'
-import SwiperComponent from './SwiperComponent'
+import SwiperComponent1 from './SwiperComponent'
 import SwiperComponent2 from './SwiperComponent2'
 import SwipeCard from './SwipeCard'
 import Footer from './Footer'
+import Cart from './Cart'
+import Orders from './Orders'
 
 export {
     Home,
@@ -20,8 +22,10 @@ export {
     SideBar,
     PhotoSlider,
     ProductCard,
-    SwiperComponent,
+    SwiperComponent1,
     SwipeCard,
     SwiperComponent2,
-    Footer
+    Footer,
+    Cart,
+    Orders
 }

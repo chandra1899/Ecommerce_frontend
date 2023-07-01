@@ -13,7 +13,7 @@ import { EffectCoverflow, Pagination ,Navigation} from "swiper";
 
 export default function SwiperComponent2() {
   return (
-    <div className="container">
+    <div className="container bg-dimWhite ">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { Footer, PhotoSlider,ProductCard ,SwiperComponent,SwiperComponent2} from '.'
+import { Footer, PhotoSlider,ProductCard ,SwiperComponent1,SwiperComponent2} from '.'
 import {motion} from 'framer-motion'
 import {fadeIn,textVariant} from '../utils/motion'
 import { SectionWrapper } from '../hoc'
@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
     <PhotoSlider/>
-    <div className='absolute top-[40vh] mt-20 flex flex-wrap gap-20 px-10'>
+    <div className='absolute z-[1] top-[40vh] mt-20 flex flex-wrap gap-20 px-10'>
     {products.map((product,index)=>(
       <Card product={product} index={index}/>
     ))}
@@ -43,7 +43,7 @@ const Home = () => {
       ))}
       </div>
       </div>
-      <SwiperComponent/>
+      <SwiperComponent1/>
       <SwiperComponent2/>
       <Footer/>
     </div>

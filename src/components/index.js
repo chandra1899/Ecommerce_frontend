@@ -12,6 +12,9 @@ import SwipeCard from './SwipeCard'
 import Footer from './Footer'
 import Cart from './Cart'
 import Orders from './Orders'
+import MidelSwiper from './MidelSwiper'
+import LastHome from './LastHome'
+import HomeSection_2 from './HomeSection_2'
 
 export {
     Home,
@@ -27,5 +30,8 @@ export {
     SwiperComponent2,
     Footer,
     Cart,
-    Orders
+    Orders,
+    MidelSwiper,
+    LastHome,
+    HomeSection_2
 }

@@ -18,6 +18,7 @@ const ProductCard = ({index}) => {
         <p className='font-medium'>20</p>
       </div>
       <p className='font-poppins flex flex-row justify-between items-center px-4 my-2'>description</p>
+      <button className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
     </div>
    </Tilt>
   )

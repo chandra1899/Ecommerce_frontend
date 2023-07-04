@@ -8,6 +8,12 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import SwipeCard from './SwipeCard'
 
+import computer1_icon from '../assets/computer1_icon.png'
+import laptop1_icon from '../assets/laptop1_icon.png'
+import mouse1_icon from '../assets/mouse1_icon.png'
+import pendrive1_icon from '../assets/pendrive1_icon.png'
+import phone1_icon from '../assets/phone1_icon.png'
+
 function SwiperComponent() {
   return (
     <div className="container">
@@ -35,61 +41,38 @@ function SwiperComponent() {
       >
         <SwiperSlide>
         
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-1.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={mouse1_icon} />
         </div>
         
         </SwiperSlide>
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-4.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={laptop1_icon} />
         </div>
           
         </SwiperSlide>
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </div>
-         
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </div>
-         
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </div>
-         
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </div>
-         
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </div>
-         
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={computer1_icon} />
         </div>
          
         </SwiperSlide>
        
+       
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-2.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={phone1_icon} />
+        </div>
+         
+        </SwiperSlide>       
+        <SwiperSlide>
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={pendrive1_icon} />
         </div>
         
         </SwiperSlide>
-        <div className="slider-controler">
+        <div className="slider-controler mt-6">
           <div className="swiper-button-prev slider-arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </div>

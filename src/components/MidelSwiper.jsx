@@ -107,7 +107,7 @@ const MidelSwiper = () => {
 
       <div className='flex flex-row justify-center items-center'>
         {/* 1 tv */}
-        <div className='bg-white h-auto w-[80vw] m-3 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
+        <div className='bg-white h-auto w-[80vw] m-3 my-12 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
             <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
             <p className='my-1'>⭐⭐⭐⭐⭐</p>
@@ -115,16 +115,15 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] mx-auto my-4'
             >
-
             <img src="https://i.pinimg.com/originals/86/85/eb/8685eb5cefb370abb3b52320404224f1.jpg" alt="" className='h-[300px] w-[80vw] m-auto object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-12 mx-auto'>Add To Bucket</motion.button>
             
         </div>
       </div>

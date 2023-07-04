@@ -11,6 +11,12 @@ import 'swiper/css/navigation';
 // import required modules
 import { EffectCoverflow, Pagination ,Navigation} from "swiper";
 
+import laptop2_icon from '../assets/laptop2_icon.png'
+import laptop3_icon from '../assets/laptop3_icon.png'
+import shoe2_icon from '../assets/shoe2_icon.png'
+import watch2_icon from '../assets/watch2_icon.png'
+import computer2_icon from '../assets/computer2_icon.png'
+
 export default function SwiperComponent2() {
   return (
     <div className="container bg-dimWhite ">
@@ -38,43 +44,33 @@ export default function SwiperComponent2() {
         className="swiper_container"
       >
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-1.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={laptop2_icon} />
         </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-2.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={shoe2_icon} />
+        </div>
+        
+        </SwiperSlide>
+        
+        <SwiperSlide>
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={laptop3_icon} />
         </div>
         
         </SwiperSlide>
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-3.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={watch2_icon} />
         </div>
         
         </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-4.jpg' />
-        </div>
         
-        </SwiperSlide>
         <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-5.jpg' />
-        </div>
-        
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-6.jpg' />
-        </div>
-        
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[370px] w-[340px]'>
-        <SwipeCard src='https://swiperjs.com/demos/images/nature-7.jpg' />
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard src={computer2_icon} />
         </div>
         
         </SwiperSlide>

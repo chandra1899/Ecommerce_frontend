@@ -1,5 +1,4 @@
 import React from 'react'
-import {Tilt} from 'react-tilt'
 import {fadeIn,textVariant} from '../utils/motion'
 import {motion} from 'framer-motion'
 import { SectionWrapper } from '../hoc'
@@ -19,52 +18,53 @@ const HomeSection_2 = () => {
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
-              }}
+
+            <motion.div
+             whileHover={{
+              scale:1.1
+            }}
             >
         <img src={apple_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+        <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
-              }}
+            <motion.div
+            whileHover={{
+              scale:1.1
+            }}
             >
         <img src={earPod_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+            <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
+            <motion.div
+              whileHover={{
+                scale:1.1
               }}
             >
         <img src={headPhone_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+            <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       </div>
 
@@ -73,52 +73,52 @@ const HomeSection_2 = () => {
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
-              }}
+            <motion.div
+            whileHover={{
+              scale:1.1
+            }}
             >
         <img src={shoe_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+            <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
+            <motion.div
+              whileHover={{
+                scale:1.1
               }}
             >
         <img src={watch_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+            <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>Electronics</p>
         <p>$ <span className='font-bold'>99</span></p>
         <p>⭐⭐⭐</p>
-        <Tilt>
-            <div
-             options={{
-                max:45,
-                scale:1,
-                speed:45
+            <motion.div
+              whileHover={{
+                scale:1.1
               }}
             >
         <img src={dress_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
-            </div>
-        </Tilt>
-        <button className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</button>
+            </motion.div>
+            <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       </div>
       </div>

@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className='relative z-0'>
      {location.pathname!=='/login' && location.pathname!=='/signup' && location.pathname!=='/verification' && <Navbar/>}
-     <SideBar/>
+     {/* <SideBar/> */}
       <Routes >
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>} />

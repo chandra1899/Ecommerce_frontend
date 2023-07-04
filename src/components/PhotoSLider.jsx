@@ -38,7 +38,7 @@ export default function PhotoSLider() {
         </SwiperSlide>
         <SwiperSlide className="swiper-slide1">
         <img
-        src="https://indiater.com/wp-content/uploads/2017/08/Product-Sale-Flyer-Template-V-1-990x463.jpg"
+        src="https://thumbs.dreamstime.com/z/online-shopping-banner-bags-icons-shop-61959143.jpg"
         alt="image 3"
         className="h-full w-full object-cover"
       />

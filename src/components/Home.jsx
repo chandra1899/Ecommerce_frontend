@@ -10,7 +10,18 @@ const Card=({product,index})=>(
     variants={fadeIn("right","spring",0.3*index,0.75)}
     className='w-full green-pink-gradient p-[1px] rounded-[20px] '
      >
-      <ProductCard product={product} index={index}/>
+      <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    key={index} className='h-[280px] w-[250px] bg-white shadow-xl rounded-xl'>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Beautiful-pink-flower_-_West_Virginia_-_ForestWander.jpg" alt="" className='h-[70%] object-cover shadow-xl' />
+      <div className='font-poppins flex flex-row justify-between items-center px-4 my-2'>
+        <p>flower</p>
+        <p className='font-medium'>20</p>
+      </div>
+      <p className='font-poppins flex flex-row justify-between items-center px-4 my-2'>description</p>
+    </motion.div>
     </motion.div>
     </div>
 )

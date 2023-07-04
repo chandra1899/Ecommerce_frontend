@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./sideMenuBar/MenuToggle";
 import { Navigation } from "./sideMenuBar/Navigation";
+import { useSelector,useDispatch} from 'react-redux'
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -26,19 +27,20 @@ const sidebar = {
 };
 
 export const SideBar = () => {
+  const isSideOpen=useSelector((state)=>state.isSideOpen.isSideOpen)
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
 
   return (
     <motion.nav
       initial={false}
-      animate={isOpen ? "open" : "closed"}
+      animate={isSideOpen ? "open" : "closed"}
       ref={containerRef}
-      className='z-10 h-[100vh] w-[350px] fixed top-0 left-0 flex justify-center items-center'
+      className={`z-[2] h-[100vh] w-auto fixed -top-8 left-0 justify-center items-center`}
     >
-      <motion.div className=" bottom-0 w-[350px] absolute top-0 left-0 bg-black-gradient" variants={sidebar} />
+      <motion.div className=" bottom-0 w-[350px] absolute top-0 left-0 bg-black" variants={sidebar} />
       <Navigation />
-      <MenuToggle toggle={() => toggleOpen()} />
+      {/* <MenuToggle toggle={() => toggleOpen()} /> */}
     </motion.nav>
   );
 };

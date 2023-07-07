@@ -38,14 +38,14 @@ const CreatePostForm = () => {
         formData.append('quantity', form.quantity);
         formData.append('starts', form.starts);
         formData.append('belongsTo', form.belongsTo);
-        let res=await fetch(`${config.baseUrl}/api/post/create`,{
+        let res=await fetch(`http://localhost:8000/api/product/createproduct`,{
             method:"POST",
             credentials:'include', 
             body:formData
           })
           let data=await res.json();
           if(res.status===200){
-            
+            window.alert('successfully created product');
           }
           else{             
                            
@@ -72,7 +72,7 @@ const CreatePostForm = () => {
     <label className='flex flex-col'>
             <span className={`text-black font-medium mb-4`}>product price</span>
             <input 
-            type="number" 
+            type="text" 
             name='price'
             value={form.price}
             onChange={handleChange}
@@ -94,7 +94,7 @@ const CreatePostForm = () => {
     <label className='flex flex-col'>
             <span className={`text-black font-medium mb-4`}>product quantity</span>
             <input 
-            type="number" 
+            type="text" 
             name='quantity'
             value={form.quantity}
             onChange={handleChange}
@@ -105,7 +105,7 @@ const CreatePostForm = () => {
     <label className='flex flex-col'>
             <span className={`text-black font-medium mb-4`}>product starts</span>
             <input 
-            type="number" 
+            type="text" 
             name='starts'
             value={form.starts}
             onChange={handleChange}

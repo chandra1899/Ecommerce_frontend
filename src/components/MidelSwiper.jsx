@@ -1,13 +1,36 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { motion } from 'framer-motion'
 
 const MidelSwiper = () => {
+  const [section4Products,setSection4Products]=useState([]);
+  const getSection4=async ()=>{
+    let res=await fetch(`http://localhost:8000/api/product/getParticularProducts?belongsTo=section4`,{
+            method:"GET",
+            headers:{
+              "Content-Type":"application/json"
+          },
+          credentials:'include', 
+          })
+          let data=await res.json();
+          if(res.status===200){
+            console.log(data.products);
+         
+            if(data.products!==undefined){setSection4Products(data.products)}
+          }else{
+          window.alert('error in fetching products of section1')
+          }
+  }
+  useEffect(()=>{
+    window.scrollTo(0,0)
+    getSection4()
+    console.log("section1Products",typeof section1Products);
+  },[])
   return (
-    <div className='flex flex-col justify-center items-center mb-7'>
+    <>{section4Products.length!==0 && <div className='flex flex-col justify-center items-center mb-7'>
       <div className='flex flex-row justify-center items-center'>
         <div  className='bg-white h-auto w-[40vw] m-3 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[0].price}</span> </p>
             <p className='my-1'>⭐⭐⭐</p>
             <motion.div
              whileHover={{
@@ -16,7 +39,7 @@ const MidelSwiper = () => {
             className='h-[250px] m-auto'
             >
 
-            <img src="https://4.bp.blogspot.com/-VI7xt09W6tE/XH8JnMJf3vI/AAAAAAAAEMM/AI6mlbYuBWY1sz1YxOLrDip2z3N1QEyvACLcBGAs/s1600/511bLgB-PcL.jpg" alt="" className='h-[250px] m-auto'/>
+            <img src={`http://localhost:8000/api/product/photo/${section4Products[0]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -26,7 +49,7 @@ const MidelSwiper = () => {
         </div>
         <div className='bg-white h-auto w-[40vw] m-3 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[1].price}</span> </p>
             <p className='my-1'>⭐⭐⭐</p>
             <motion.div
              whileHover={{
@@ -35,7 +58,7 @@ const MidelSwiper = () => {
             className='h-[250px] m-auto'
             >
 
-            <img src="https://www.techprevue.com/wp-content/uploads/2016/09/curved-smart-tv-photo.jpg" alt="" className='h-[250px] m-auto'/>
+            <img src={`http://localhost:8000/api/product/photo/${section4Products[1]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -49,7 +72,7 @@ const MidelSwiper = () => {
         {/* 3watch alexa phone */}
         <div className='bg-white h-auto w-[27vw] m-2 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
             <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[2].price}</span> </p>
             <p className='my-1'>⭐⭐⭐</p>
             <motion.div
              whileHover={{
@@ -58,7 +81,7 @@ const MidelSwiper = () => {
             className='h-[250px] m-auto'
             >
 
-            <img src="https://i5.walmartimages.com/asr/e1ae90b2-98da-443b-888c-a71228c5234e.eb10d07052b374f38aa17166043f5a7a.jpeg" alt="" className='h-[250px] m-auto' />
+            <img src={`http://localhost:8000/api/product/photo/${section4Products[2]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -68,7 +91,7 @@ const MidelSwiper = () => {
         </div>
         <div className='bg-white h-auto w-[27vw] m-2 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[3].price}</span> </p>
             <p className='my-1'>⭐⭐⭐⭐</p> <motion.div
              whileHover={{
               scale:1.1
@@ -76,7 +99,7 @@ const MidelSwiper = () => {
             className='h-[250px] m-auto'
             >
 
-        <img src="https://cdn.macrumors.com/article-new/2017/10/61yI7vWa83L._SL1000_-e1507027523440-800x818.jpg?retina" alt="" className='h-[250px] m-auto' />
+        <img src={`http://localhost:8000/api/product/photo/${section4Products[3]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -86,7 +109,7 @@ const MidelSwiper = () => {
         </div>
         <div className='bg-white h-auto w-[27vw] m-2 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[4].price}</span> </p>
             <p className='my-1'>⭐⭐⭐⭐⭐</p>
             <motion.div
              whileHover={{
@@ -95,7 +118,7 @@ const MidelSwiper = () => {
             className='h-[250px] m-auto'
             >
 
-        <img src="https://img.tttcdn.com/product/xy/2000/2000/p/gu1/P/8/PF0008GY-US-128/PF0008GY-US-128-1-fa9d-CVm7.jpg?version=20180226" alt="" className='h-[250px] m-auto'/>
+        <img src={`http://localhost:8000/api/product/photo/${section4Products[4]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -109,7 +132,7 @@ const MidelSwiper = () => {
         {/* 1 tv */}
         <div className='bg-white h-auto w-[80vw] m-3 my-12 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
-            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>99</span> </p>
+            <p className='font-poppins my-1 mt-2'>$ <span className='font-bold'>{section4Products[5].price}</span> </p>
             <p className='my-1'>⭐⭐⭐⭐⭐</p>
             <motion.div
              whileHover={{
@@ -117,17 +140,18 @@ const MidelSwiper = () => {
             }}
             className='h-[250px] mx-auto my-4'
             >
-            <img src="https://i.pinimg.com/originals/86/85/eb/8685eb5cefb370abb3b52320404224f1.jpg" alt="" className='h-[300px] w-[80vw] m-auto object-contain'/>
+            <img src={`http://localhost:8000/api/product/photo/${section4Products[5]._id}`} alt="" className='h-[300px] w-[80vw] m-auto object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-12 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-12 mt-24 mx-auto'>Add To Bucket</motion.button>
             
         </div>
       </div>
-    </div>
+    </div>}
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect}from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -15,8 +15,30 @@ import pendrive1_icon from '../assets/pendrive1_icon.png'
 import phone1_icon from '../assets/phone1_icon.png'
 
 function SwiperComponent() {
+  const [section3Products,setSection3Products]=useState([]);
+  const getSection1=async ()=>{
+    let res=await fetch(`http://localhost:8000/api/product/getParticularProducts?belongsTo=section3`,{
+            method:"GET",
+            headers:{
+              "Content-Type":"application/json"
+          },
+          credentials:'include', 
+          })
+          let data=await res.json();
+          if(res.status===200){
+            console.log(data.products);
+         
+            if(data.products!==undefined){setSection3Products(data.products)}
+          }else{
+          window.alert('error in fetching products of section1')
+          }
+  }
+  useEffect(()=>{
+    getSection1()
+  },[])
   return (
-    <div className="container">
+    <>
+    {section3Products.length!==0 && <div className="container">
       <h1 className="heading">Flower Gallery</h1>
       <Swiper
         effect={'coverflow'}
@@ -39,22 +61,21 @@ function SwiperComponent() {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
+          <SwiperSlide>
+          <div className=' mt-5 h-[430px] w-[340px]'>
+          <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[0]._id}`} />
+          </div>
+          </SwiperSlide>
+      
         <SwiperSlide>
-        
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={mouse1_icon} />
-        </div>
-        
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={laptop1_icon} />
+        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[1]._id}`} />
         </div>
           
         </SwiperSlide>
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={computer1_icon} />
+        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[2]._id}`} />
         </div>
          
         </SwiperSlide>
@@ -62,13 +83,13 @@ function SwiperComponent() {
        
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={phone1_icon} />
+        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[3]._id}`} />
         </div>
          
         </SwiperSlide>       
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={pendrive1_icon} />
+        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[4]._id}`} />
         </div>
         
         </SwiperSlide>
@@ -82,7 +103,8 @@ function SwiperComponent() {
           <div className="swiper-pagination"></div>
         </div>
       </Swiper>
-    </div>
+    </div>}
+    </>
   );
 }
 

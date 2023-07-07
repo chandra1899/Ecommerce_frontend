@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect ,useState} from 'react'
 import {fadeIn,textVariant} from '../utils/motion'
 import {motion} from 'framer-motion'
 import { SectionWrapper } from '../hoc'
@@ -9,14 +9,35 @@ import headPhone_icon from '../assets/headPhone_icon.png'
 import shoe_icon from '../assets/shoe_icon.png'
 import watch_icon from '../assets/watch_icon.png'
 
-const product1=['boys','girls','men'];
 const HomeSection_2 = () => {
+  const [section2Products,setSection2Products]=useState([]);
+  const getSection2=async ()=>{
+    let res=await fetch(`http://localhost:8000/api/product/getParticularProducts?belongsTo=section2`,{
+            method:"GET",
+            headers:{
+              "Content-Type":"application/json"
+          },
+          credentials:'include', 
+          })
+          let data=await res.json();
+          if(res.status===200){
+            console.log('section2Products',data.products);
+         
+            if(data.products!==undefined){setSection2Products(data.products)}
+          }else{
+          window.alert('error in fetching products of section1')
+          }
+  }
+  useEffect(()=>{
+    getSection2()
+  },[])
   return (
-    <div className='w-[100%] bg-dimWhite h-auto p-10 my-4 py-15'>
+    <>
+    {section2Products.length!==0 && <div className='w-[100%] bg-dimWhite h-auto p-10 my-4 py-15'>
       <div className='flex flex-wrap m-3 justify-around items-center mb-16 mt-10'>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[0].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[0].price}</span></p>
         <p>⭐⭐⭐</p>
 
             <motion.div
@@ -24,7 +45,7 @@ const HomeSection_2 = () => {
               scale:1.1
             }}
             >
-        <img src={apple_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
         <motion.button
         whileHover={{ scale: 1.1 }}
@@ -33,15 +54,15 @@ const HomeSection_2 = () => {
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[1].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[1].price}</span></p>
         <p>⭐⭐⭐</p>
             <motion.div
             whileHover={{
               scale:1.1
             }}
             >
-        <img src={earPod_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -50,15 +71,15 @@ const HomeSection_2 = () => {
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[2].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[2].price}</span></p>
         <p>⭐⭐⭐</p>
             <motion.div
               whileHover={{
                 scale:1.1
               }}
             >
-        <img src={headPhone_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -70,15 +91,15 @@ const HomeSection_2 = () => {
 
       <div className='flex flex-wrap justify-around items-center mb-16'>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[3].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[3].price}</span></p>
         <p>⭐⭐⭐</p>
             <motion.div
             whileHover={{
               scale:1.1
             }}
             >
-        <img src={shoe_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -87,15 +108,15 @@ const HomeSection_2 = () => {
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[4].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[4].price}</span></p>
         <p>⭐⭐⭐</p>
             <motion.div
               whileHover={{
                 scale:1.1
               }}
             >
-        <img src={watch_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -104,15 +125,15 @@ const HomeSection_2 = () => {
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
-        <p>Electronics</p>
-        <p>$ <span className='font-bold'>99</span></p>
+        <p>{section2Products[5].name}</p>
+        <p>$ <span className='font-bold'>{section2Products[5].price}</span></p>
         <p>⭐⭐⭐</p>
             <motion.div
               whileHover={{
                 scale:1.1
               }}
             >
-        <img src={dress_icon} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -121,7 +142,8 @@ const HomeSection_2 = () => {
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
       </motion.div>
       </div>
-      </div>
+      </div>}
+    </>
   )
 }
 

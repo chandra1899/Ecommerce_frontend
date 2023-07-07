@@ -15,6 +15,8 @@ import Orders from './Orders'
 import MidelSwiper from './MidelSwiper'
 import LastHome from './LastHome'
 import HomeSection_2 from './HomeSection_2'
+import AdminPanel from './AdminPanel'
+import CreateProductForm from './CreateProductForm'
 
 export {
     Home,
@@ -33,5 +35,7 @@ export {
     Orders,
     MidelSwiper,
     LastHome,
-    HomeSection_2
+    HomeSection_2,
+    AdminPanel,
+    CreateProductForm
 }

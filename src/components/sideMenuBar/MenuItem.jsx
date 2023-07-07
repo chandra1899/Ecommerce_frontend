@@ -18,21 +18,29 @@ const variants = {
   }
 };
 
-export const MenuItem = () => {
+export const MenuItem = ({name,index}) => {
   return (
-    <motion.li
+   <>
+    {name!=='border' ? <motion.li
       variants={variants}
     >
-      <motion.label className="ml-[100px] flex my-12 items-center">
-      <input type="checkbox" className="mr-6 h-[20px] w-[20px]"/>
+      <motion.label className={`${name==='All products'?'ml-[30px]':'ml-[60px]'}  flex my-6 items-center`}>
+      <input type="checkbox" className={`mr-6 ${name==='All products'?'h-[17px] w-[17px]':'h-[15px] w-[15px]'} `}/>
       <motion.p
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.95 }}
-      className="text-[18px] cursor-pointer mx-4"
+      className={`${name==='All products'?'text-[17px] my-3':'text-[15px]'} cursor-pointer w-[100px] mx-4`}
       >
-        hello</motion.p>
+        {name}</motion.p>
       </motion.label>
-    </motion.li>
+    </motion.li>:
+    <div >
+<span className=" mx-[30px]">
+
+</span>
+    </div>
+    }
+   </>
   );
 };
 

@@ -38,7 +38,7 @@ export const SideBar = () => {
       ref={containerRef}
       className={`z-[2] h-[100vh] w-auto fixed -top-8 left-0 justify-center items-center`}
     >
-      <motion.div className=" bottom-0 w-[350px] absolute top-0 left-0 bg-black" variants={sidebar} />
+      <motion.div className=" bottom-0 w-[300px] h-full absolute top-0 left-0 bg-black" variants={sidebar} />
       <Navigation />
       {/* <MenuToggle toggle={() => toggleOpen()} /> */}
     </motion.nav>

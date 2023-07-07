@@ -12,14 +12,14 @@ const variants = {
 };
 
 export const Navigation = () => (
-  <motion.ul variants={variants} className="absolute top-[100px]">
-    {itemIds.map(i => (
-      <MenuItem i={i} key={i} />
+  <motion.ul variants={variants} className="absolute top-[70px] h-[100%] overflow-scroll no-scrollbar">
+    {itemIds.map((name,index) => (
+      <MenuItem name={name} key={index} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = ['All products','men','women','smart watches','wall clocks','alarm clock','border','$ 0-20','$ 21-40','$ 41-60','$ 61-80','$ >80'];
 
 
 export default Navigation

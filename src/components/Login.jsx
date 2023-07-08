@@ -6,12 +6,41 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch} from 'react-redux'
 import {afterEmail} from '../store/loginSlice'
 import {isVerifyaction} from '../store/verificationSlice'
+import {userState} from '../store/user'
 
 const Login = () => {
   const navigate=useNavigate()
   const isEmail=useSelector((state)=>state.isEmail.isEmail)
   const isVerify=useSelector((state)=>state.isVerify.isVerify)
   const dispatch=useDispatch()
+
+  const calluser=async ()=>{
+    try {
+      // setLoading(true)
+      let res= await fetch(`http://localhost:8000/api/user/getuser`,{
+        method:'GET',
+        // mode: 'no-cors',
+        headers:{
+          'Access-Control-Allow-Origin': '*',
+          Accept:"application/json",
+          "Content-Type":"application/json"
+        },
+        credentials:'include', 
+      });
+      let data=await res.json();
+      // setLoading(false)
+      console.log(res.status);
+      if(res.status===200){
+        dispatch(userState.setUser(data.can));
+        // console.log(data.can);
+    }
+    else{
+      dispatch(userState.unsetUser());
+    }
+    } catch (err) {
+     
+    }
+  }
 
   const submit=async ()=>{
     let res=await fetch("http://localhost:8000/api/user/create-session",{
@@ -27,6 +56,7 @@ const Login = () => {
     })
     if(res.status===200){
       // window.alert('sucessfully logged in')
+      calluser()
       navigate('/');
     }
   }

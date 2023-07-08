@@ -45,7 +45,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section4Products[0]._id)}}>Add To Bucket</motion.button>
         </div>
         <div className='bg-white h-auto w-[40vw] m-3 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
@@ -64,7 +64,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section4Products[1]._id)}}>Add To Bucket</motion.button>
         </div>
         </div>
 
@@ -87,7 +87,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section4Products[2]._id)}}>Add To Bucket</motion.button>
         </div>
         <div className='bg-white h-auto w-[27vw] m-2 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
@@ -105,7 +105,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section4Products[3]._id)}}>Add To Bucket</motion.button>
         </div>
         <div className='bg-white h-auto w-[27vw] m-2 break-words p-4 shadow-xl text-[18px] flex flex-col justify-center items-start'>
         <p className='font-medium'>Smasang kjdf gokkj iokmdf pjkmkdf pokk  pojsdfmf jiop dfgv </p>
@@ -124,7 +124,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section4Products[4]._id)}}>Add To Bucket</motion.button>
         </div>
         </div>
 
@@ -146,7 +146,7 @@ const MidelSwiper = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-12 mt-24 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-12 mt-24 mx-auto' onClick={()=>{handleAddCart(section4Products[5]._id)}}>Add To Bucket</motion.button>
             
         </div>
       </div>

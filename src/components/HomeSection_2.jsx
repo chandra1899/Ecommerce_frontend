@@ -8,8 +8,12 @@ import earPod_icon from '../assets/earPod_icon.png'
 import headPhone_icon from '../assets/headPhone_icon.png'
 import shoe_icon from '../assets/shoe_icon.png'
 import watch_icon from '../assets/watch_icon.png'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const HomeSection_2 = () => {
+  const navigate=useNavigate();
+  const user=useSelector((state)=>state.user.user)
   const [section2Products,setSection2Products]=useState([]);
   const getSection2=async ()=>{
     let res=await fetch(`http://localhost:8000/api/product/getParticularProducts?belongsTo=section2`,{
@@ -27,6 +31,24 @@ const HomeSection_2 = () => {
           }else{
           window.alert('error in fetching products of section1')
           }
+  }
+  const handleAddCart=async (id)=>{
+    if(user){
+      let res=await fetch(`http://localhost:8000/api/cart/addProduct/${id}`,{
+            method:"post",
+            headers:{
+              "Content-Type":"application/json"
+          },
+          credentials:'include', 
+          })
+          let data=await res.json();
+          if(res.status===200){
+            window.alert('added to cart')
+          }
+
+    }else{
+      navigate('/login')
+    }
   }
   useEffect(()=>{
     getSection2()
@@ -51,7 +73,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[0]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[1].name}</p>
@@ -68,7 +90,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[1]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[2].name}</p>
@@ -85,7 +107,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[2]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       </div>
 
@@ -105,7 +127,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[3]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[4].name}</p>
@@ -122,7 +144,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[4]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[5].name}</p>
@@ -139,7 +161,7 @@ const HomeSection_2 = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto'>Add To Bucket</motion.button>
+        className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[5]._id)}}>Add To Bucket</motion.button>
       </motion.div>
       </div>
       </div>}

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Login ,Home,SignUp,Navbar,Verification,SideBar,Cart,Orders,AdminPanel,CreateProductForm} from './components';
+import React, { useEffect } from 'react'
+import { Login ,Home,SignUp,Navbar,Verification,Cart,Orders,AdminPanel,CreateProductForm} from './components';
 import {
   Routes,
   Route
@@ -7,14 +7,46 @@ import {
 import { useLocation } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux'
 import {createProductForm} from './store/createProductSlice'
+import {userState} from './store/user'
 
 const App = () => {
   const location=useLocation()
-  const dispath=useDispatch();
+  const dispatch=useDispatch();
+  const user=useSelector(state=>state.user.user)
     const isCreateProductOpen=useSelector(state=>state.isCreateProductFormOpen.isCreateProductOpen)
     const handleBackDrop=()=>{
-      dispath(createProductForm.setFalse());
+      dispatch(createProductForm.setFalse());
     }
+    const calluser=async ()=>{
+      try {
+        // setLoading(true)
+        let res= await fetch(`http://localhost:8000/api/user/getuser`,{
+          method:'GET',
+          // mode: 'no-cors',
+          headers:{
+            'Access-Control-Allow-Origin': '*',
+            Accept:"application/json",
+            "Content-Type":"application/json"
+          },
+          credentials:'include', 
+        });
+        let data=await res.json();
+        // setLoading(false)
+        // console.log(res.status);
+        if(res.status===200){
+          dispatch(userState.setUser(data.can));
+          console.log(data.can);
+      }
+      else{
+        dispatch(userState.unsetUser());
+      }
+      } catch (err) {
+       
+      }
+    }
+    useEffect( () => {
+       calluser();
+    }, []);
 
   return (
     <div className='relative z-0'>

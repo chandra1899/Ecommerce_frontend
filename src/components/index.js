@@ -17,6 +17,10 @@ import LastHome from './LastHome'
 import HomeSection_2 from './HomeSection_2'
 import AdminPanel from './AdminPanel'
 import CreateProductForm from './CreateProductForm'
+import Product from './Product'
+import Checkout from './Checkout'
+import ShippinAddressForm from './ShippingAddressForm'
+import CheckoutSuccess from './CHeckoutSuccess'
 
 export {
     Home,
@@ -37,5 +41,9 @@ export {
     LastHome,
     HomeSection_2,
     AdminPanel,
-    CreateProductForm
+    CreateProductForm,
+    Product,
+    Checkout,
+    ShippinAddressForm,
+    CheckoutSuccess
 }

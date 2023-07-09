@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Login ,Home,SignUp,Navbar,Verification,Cart,Orders,AdminPanel,CreateProductForm} from './components';
+import { Login ,Home,SignUp,Navbar,Verification,Cart,Orders,AdminPanel,CreateProductForm,Product,Checkout,CheckoutSuccess} from './components';
 import {
   Routes,
   Route
@@ -74,7 +74,7 @@ const App = () => {
 
   return (
     <div className='relative z-0'>
-     {location.pathname!=='/login' && location.pathname!=='/signup' && location.pathname!=='/verification' && <Navbar/>}
+     {location.pathname!=='/login' && location.pathname!=='/signup' && location.pathname!=='/verification' && location.pathname!=='/checkout' && <Navbar/>}
      <CreateProductForm/>
      {(isCreateProductOpen) && <div className='bg-gray-900 absolute bg-opacity-70 -mt-52  h-[170vh] w-[150vw] z-[39] ' onClick={handleBackDrop}></div>}
       <Routes >
@@ -85,6 +85,9 @@ const App = () => {
         <Route exact path='/cart' element={<Cart/>} />
         <Route exact path='/orders' element={<Orders/>} />
         <Route exact path='/admin' element={<AdminPanel/>} />
+        <Route exact path='/product/:id' element={<Product/>} />
+        <Route exact path='/checkout' element={<Checkout/>} />
+        <Route exact path='/checkoutSuccess' element={<CheckoutSuccess/>} />
       </Routes>
       {/* <Footer/> */}
     </div>

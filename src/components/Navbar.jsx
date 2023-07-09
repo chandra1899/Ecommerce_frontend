@@ -8,6 +8,7 @@ import cart from '../assets/cart.png'
 import address from '../assets/address.png'
 import { useNavigate } from 'react-router-dom'
 import { SideBar} from '.'
+import {userState} from '../store/user'
 
 const Navbar = () => {
   const navigate=useNavigate()
@@ -17,6 +18,53 @@ const Navbar = () => {
   const cartProducts=useSelector(state=>state.cartProducts.cartProducts)
   const cartNo=useSelector(state=>state.cartNumber.cartNumber)
   const [cartNumber,setCartNumber]=useState(cartProducts.length)
+
+  const calluser=async ()=>{
+    try {
+      // setLoading(true)
+      let res= await fetch(`http://localhost:8000/api/user/getuser`,{
+        method:'GET',
+        // mode: 'no-cors',
+        headers:{
+          'Access-Control-Allow-Origin': '*',
+          Accept:"application/json",
+          "Content-Type":"application/json"
+        },
+        credentials:'include', 
+      });
+      let data=await res.json();
+      // setLoading(false)
+      // console.log(res.status);
+      if(res.status===200){
+        dispatch(userState.setUser(data.can));
+        console.log(data.can);
+    }
+    else{
+      dispatch(userState.unsetUser());
+    }
+    } catch (err) {
+     
+    }
+  }
+
+  const logout=async ()=>{
+    let res= await fetch(`http://localhost:8000/api/user/sign-out`,{
+      method:'GET',
+      headers:{
+        'Access-Control-Allow-Origin': '*',
+        Accept:"application/json",
+        "Content-Type":"application/json"
+      },
+      credentials:'include', 
+    });
+    let data=await res.json();
+    if(res.status===200){      
+      navigate('/');
+      calluser();
+    }else{      
+                       
+    }
+  }
 
   return (
     <div className='w-[100vw] h-[50px] fixed top-0 text-white bg-black flex items-center justify-around px-2 z-10'>
@@ -40,7 +88,8 @@ const Navbar = () => {
       </div>
       </div>
 
-      <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[140px]' onClick={()=>{navigate('/login')}}>Hello, sign-in accounts</p>
+      {!user && <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[140px]' onClick={()=>{navigate('/login')}}>Hello, sign-in accounts</p>}
+     {user && <p className='font-medium text-[18px] hover:text-red-600 cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[140px]' onClick={logout}>Sign out</p>}
 
       <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[120px]' onClick={()=>{navigate('/orders')}}>Returns<span className='font-bold'>& orders</span></p>
 

@@ -9,11 +9,12 @@ import headPhone_icon from '../assets/headPhone_icon.png'
 import shoe_icon from '../assets/shoe_icon.png'
 import watch_icon from '../assets/watch_icon.png'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import {cartNumberAction} from '../store/cartNumberSlice'
 
 const HomeSection_2 = () => {
   const navigate=useNavigate();
+  const dispatch=useDispatch();
   const user=useSelector((state)=>state.user.user)
   const [section2Products,setSection2Products]=useState([]);
   const getSection2=async ()=>{
@@ -68,8 +69,9 @@ const HomeSection_2 = () => {
              whileHover={{
               scale:1.1
             }}
+            onClick={()=>{navigate(`/product/${section2Products[0]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
         <motion.button
         whileHover={{ scale: 1.1 }}
@@ -85,8 +87,9 @@ const HomeSection_2 = () => {
             whileHover={{
               scale:1.1
             }}
+            onClick={()=>{navigate(`/product/${section2Products[1]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -94,7 +97,9 @@ const HomeSection_2 = () => {
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[1]._id)}}>Add To Bucket</motion.button>
       </motion.div>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      <motion.div 
+      variants={textVariant()} 
+      className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[2].name}</p>
         <p>$ <span className='font-bold'>{section2Products[2].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -102,8 +107,9 @@ const HomeSection_2 = () => {
               whileHover={{
                 scale:1.1
               }}
+              onClick={()=>{navigate(`/product/${section2Products[2]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -122,8 +128,9 @@ const HomeSection_2 = () => {
             whileHover={{
               scale:1.1
             }}
+            onClick={()=>{navigate(`/product/${section2Products[3]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -139,8 +146,9 @@ const HomeSection_2 = () => {
               whileHover={{
                 scale:1.1
               }}
+              onClick={()=>{navigate(`/product/${section2Products[4]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
@@ -156,8 +164,9 @@ const HomeSection_2 = () => {
               whileHover={{
                 scale:1.1
               }}
+              onClick={()=>{navigate(`/product/${section2Products[5]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}`} alt="" className='h-[230px] w-[230px] object-contain'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}

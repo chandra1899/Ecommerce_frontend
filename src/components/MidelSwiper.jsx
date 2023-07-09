@@ -1,7 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import { motion } from 'framer-motion'
+import {cartNumberAction} from '../store/cartNumberSlice'
+import { useNavigate } from 'react-router-dom'
+import { useSelector,useDispatch } from 'react-redux'
 
 const MidelSwiper = () => {
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
+  const user=useSelector((state)=>state.user.user)
   const [section4Products,setSection4Products]=useState([]);
   const getSection4=async ()=>{
     let res=await fetch(`http://localhost:8000/api/product/getParticularProducts?belongsTo=section4`,{
@@ -19,6 +25,25 @@ const MidelSwiper = () => {
           }else{
           window.alert('error in fetching products of section1')
           }
+  }
+  const handleAddCart=async (id)=>{
+    if(user){
+      let res=await fetch(`http://localhost:8000/api/cart/addProduct/${id}`,{
+            method:"post",
+            headers:{
+              "Content-Type":"application/json"
+          },
+          credentials:'include', 
+          })
+          let data=await res.json();
+          if(res.status===200){
+            // window.alert('added to cart')
+            dispatch(cartNumberAction.setinc(1))
+          }
+
+    }else{
+      navigate('/login')
+    }
   }
   useEffect(()=>{
     window.scrollTo(0,0)

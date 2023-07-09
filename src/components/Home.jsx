@@ -46,7 +46,7 @@ const Home = () => {
           })
           let data=await res.json();
           if(res.status===200){
-            console.log(data.products);
+            // console.log(data.products);
          
             if(data.products!==undefined){setSection1Products(data.products)}
           }else{
@@ -56,7 +56,7 @@ const Home = () => {
   useEffect(()=>{
     window.scrollTo(0,0)
     getSection1()
-    console.log("section1Products",typeof section1Products);
+    // console.log("section1Products",typeof section1Products);
   },[])
   return (
     <div className='flex flex-col justify-center items-center'>

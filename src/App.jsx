@@ -8,6 +8,8 @@ import { useLocation } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux'
 import {createProductForm} from './store/createProductSlice'
 import {userState} from './store/user'
+import {cartProductsActions} from './store/cartProductsSlice'
+import {cartNumberAction} from './store/cartNumberSlice'
 
 const App = () => {
   const location=useLocation()
@@ -44,9 +46,31 @@ const App = () => {
        
       }
     }
+    const getCartProducts=async ()=>{
+      let res= await fetch(`http://localhost:8000/api/cart/getProducts`,{
+            method:'GET',
+            headers:{
+              'Access-Control-Allow-Origin': '*',
+              Accept:"application/json",
+              "Content-Type":"application/json"
+            },
+            credentials:'include', 
+          });
+          let data=await res.json();
+          if(res.status===200){
+            // if(data.products!==undefined)
+            dispatch(cartProductsActions.setCartProducts(data.cartProducts))
+            dispatch(cartNumberAction.setCartNumber(data.cartProducts.length))
+            // setCartProducts(data.cartProducts)
+            console.log(data.cartProducts);
+          }
+    }
     useEffect( () => {
        calluser();
     }, []);
+    useEffect( () => {
+       getCartProducts()
+    }, [user]);
 
   return (
     <div className='relative z-0'>

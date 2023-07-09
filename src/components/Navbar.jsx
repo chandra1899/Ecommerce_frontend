@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import menu from '../assets/menu.svg'
 import close from '../assets/close.svg'
 import { useSelector,useDispatch} from 'react-redux'
@@ -12,7 +12,11 @@ import { SideBar} from '.'
 const Navbar = () => {
   const navigate=useNavigate()
   const isSideOpen=useSelector((state)=>state.isSideOpen.isSideOpen)
+  const user=useSelector((state)=>state.user.user)
   const dispatch=useDispatch()
+  const cartProducts=useSelector(state=>state.cartProducts.cartProducts)
+  const cartNo=useSelector(state=>state.cartNumber.cartNumber)
+  const [cartNumber,setCartNumber]=useState(cartProducts.length)
 
   return (
     <div className='w-[100vw] h-[50px] fixed top-0 text-white bg-black flex items-center justify-around px-2 z-10'>
@@ -40,8 +44,8 @@ const Navbar = () => {
 
       <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[120px]' onClick={()=>{navigate('/orders')}}>Returns<span className='font-bold'>& orders</span></p>
 
-      <div className='relative w-[100px] cursor-pointer flex h-[100%] hover:border-[1px] hover:border-white justify-center items-center' onClick={()=>{navigate('/cart')}}>
-        <span className='absolute top-0 flex justify-center items-center right-2 h-[50%] bg-red-600 text-white rounded-full p-2'>3</span>
+      <div className='relative w-[100px] cursor-pointer flex h-[100%] hover:border-[1px] hover:border-white justify-center items-center' onClick={()=>{if(user){navigate('/cart')}else{navigate('/login')}}}>
+        <span className='absolute top-0 flex justify-center items-center right-2 h-[50%] bg-red-600 text-white rounded-full p-2'>{cartNo}</span>
         <img src={cart} alt="cart-icon" className='h-[80%]' />
       </div>
 

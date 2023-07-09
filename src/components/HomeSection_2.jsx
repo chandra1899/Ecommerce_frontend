@@ -10,6 +10,7 @@ import shoe_icon from '../assets/shoe_icon.png'
 import watch_icon from '../assets/watch_icon.png'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import {cartNumberAction} from '../store/cartNumberSlice'
 
 const HomeSection_2 = () => {
   const navigate=useNavigate();
@@ -25,7 +26,7 @@ const HomeSection_2 = () => {
           })
           let data=await res.json();
           if(res.status===200){
-            console.log('section2Products',data.products);
+            // console.log('section2Products',data.products);
          
             if(data.products!==undefined){setSection2Products(data.products)}
           }else{
@@ -43,7 +44,8 @@ const HomeSection_2 = () => {
           })
           let data=await res.json();
           if(res.status===200){
-            window.alert('added to cart')
+            // window.alert('added to cart')
+            dispatch(cartNumberAction.setinc(1))
           }
 
     }else{

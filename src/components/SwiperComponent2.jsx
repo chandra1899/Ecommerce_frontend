@@ -29,7 +29,7 @@ export default function SwiperComponent2() {
           })
           let data=await res.json();
           if(res.status===200){
-            console.log(data.products);
+            // console.log(data.products);
          
             if(data.products!==undefined){setSection5Products(data.products)}
           }else{
@@ -38,7 +38,7 @@ export default function SwiperComponent2() {
   }
   useEffect(()=>{
     getSection5()
-    console.log("section1Products",typeof section1Products);
+    // console.log("section1Products",typeof section1Products);
   },[])
   return (
     <>

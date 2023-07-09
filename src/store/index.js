@@ -5,6 +5,8 @@ import verificationReducer from './verificationSlice'
 import sideBarReducer from './sideBarSlice'
 import createProductFormReducer from './createProductSlice'
 import userReducer from './user'
+import cartProductReducer from './cartProductsSlice'
+import cartNumberReducer from './cartNumberSlice'
 
 const store=configureStore({
     reducer:{
@@ -13,7 +15,9 @@ const store=configureStore({
       isSignUp:signUpFormReducer,
       isSideOpen:sideBarReducer,
       isCreateProductFormOpen:createProductFormReducer,
-      user:userReducer
+      user:userReducer,
+      cartProducts:cartProductReducer,
+      cartNumber:cartNumberReducer
     }
 });
 

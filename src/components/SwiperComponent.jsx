@@ -26,7 +26,7 @@ function SwiperComponent() {
           })
           let data=await res.json();
           if(res.status===200){
-            console.log(data.products);
+            // console.log(data.products);
          
             if(data.products!==undefined){setSection3Products(data.products)}
           }else{

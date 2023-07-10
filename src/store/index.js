@@ -7,6 +7,7 @@ import createProductFormReducer from './createProductSlice'
 import userReducer from './user'
 import cartProductReducer from './cartProductsSlice'
 import cartNumberReducer from './cartNumberSlice'
+import subTotalReducer from './subTotalSlice'
 
 const store=configureStore({
     reducer:{
@@ -17,7 +18,8 @@ const store=configureStore({
       isCreateProductFormOpen:createProductFormReducer,
       user:userReducer,
       cartProducts:cartProductReducer,
-      cartNumber:cartNumberReducer
+      cartNumber:cartNumberReducer,
+      subTotal:subTotalReducer
     }
 });
 

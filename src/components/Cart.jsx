@@ -5,9 +5,10 @@ import {cartNumberAction} from '../store/cartNumberSlice'
 import {cartProductsActions} from '../store/cartProductsSlice'
 import CartProduct from './CartProduct'
 import {subTotalActions} from '../store/subTotalSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-  
+  const navigate=useNavigate()
   const user=useSelector(state=>state.user.user)
   const cartProducts=useSelector(state=>state.cartProducts.cartProducts)
  const dispatch=useDispatch()
@@ -22,6 +23,9 @@ const Cart = () => {
             "Content-Type":"application/json"
           },
           credentials:'include', 
+          body:JSON.stringify({
+            userId:user._id
+        })
         });
         let data=await res.json();
         if(res.status===200){
@@ -56,6 +60,9 @@ const Cart = () => {
     dispatch(subTotalActions.setSubTotal(total))
   }
   useEffect( () => {
+    if(!user){
+      // navigate('/login')
+    }
     getCartProducts()
     setSubTotal()
  }, [user]);

@@ -61,7 +61,8 @@ const LastHome = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section6Products[0]._id}`)}}
             >
 
         <img src={`http://localhost:8000/api/product/photo/${section6Products[0]._id}`} alt="" className='h-[250px] m-auto' />
@@ -80,7 +81,8 @@ const LastHome = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section6Products[1]._id}`)}}
             >
 
     <img src={`http://localhost:8000/api/product/photo/${section6Products[1]._id}`} alt="" className='h-[250px] m-auto' />
@@ -99,7 +101,8 @@ const LastHome = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section6Products[2]._id}`)}}
             >
 
     <img src={`http://localhost:8000/api/product/photo/${section6Products[2]._id}`} alt="" className='h-[250px] m-auto'/>
@@ -108,7 +111,7 @@ const LastHome = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section6Products[2]._id)}}>Add To Bucket</motion.button>
+        className='h-[35px] font-medium rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section6Products[2]._id)}} >Add To Bucket</motion.button>
     </div>
     </div>}
     </>

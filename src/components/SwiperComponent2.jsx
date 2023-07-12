@@ -36,6 +36,7 @@ export default function SwiperComponent2() {
             window.alert('error in fetching products of section1')
           }
   }
+  
   useEffect(()=>{
     getSection5()
     // console.log("section1Products",typeof section1Products);
@@ -68,32 +69,32 @@ export default function SwiperComponent2() {
       >
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section5Products[0]._id}`} />
+        <SwipeCard id={section5Products[0]._id} src={`http://localhost:8000/api/product/photo/${section5Products[0]._id}`} />
         </div>
         </SwiperSlide>
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section5Products[1]._id}`} />
-        </div>
-        
-        </SwiperSlide>
-        
-        <SwiperSlide>
-        <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section5Products[2]._id}`} />
-        </div>
-        
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section5Products[3]._id}`} />
+        <SwipeCard id={section5Products[1]._id} src={`http://localhost:8000/api/product/photo/${section5Products[1]._id}`} />
         </div>
         
         </SwiperSlide>
         
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section5Products[4]._id}`} />
+        <SwipeCard id={section5Products[2]._id} src={`http://localhost:8000/api/product/photo/${section5Products[2]._id}`} />
+        </div>
+        
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard id={section5Products[3]._id} src={`http://localhost:8000/api/product/photo/${section5Products[3]._id}`} />
+        </div>
+        
+        </SwiperSlide>
+        
+        <SwiperSlide>
+        <div className=' mt-5 h-[430px] w-[340px]'>
+        <SwipeCard id={section5Products[4]._id} src={`http://localhost:8000/api/product/photo/${section5Products[4]._id}`} />
         </div>
         
         </SwiperSlide>

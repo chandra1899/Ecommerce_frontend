@@ -60,7 +60,7 @@ const HomeSection_2 = () => {
     <>
     {section2Products.length!==0 && <div className='w-[100%] bg-dimWhite h-auto p-10 my-4 py-15'>
       <div className='flex flex-wrap m-3 justify-around items-center mb-16 mt-10'>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      <div  className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[0].name}</p>
         <p>$ <span className='font-bold'>{section2Products[0].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -71,15 +71,15 @@ const HomeSection_2 = () => {
             }}
             onClick={()=>{navigate(`/product/${section2Products[0]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
         <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[0]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      </div>
+      <div  className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[1].name}</p>
         <p>$ <span className='font-bold'>{section2Products[1].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -89,16 +89,16 @@ const HomeSection_2 = () => {
             }}
             onClick={()=>{navigate(`/product/${section2Products[1]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[1]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
-      <motion.div 
-      variants={textVariant()} 
+      </div>
+      <div 
+       
       className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[2].name}</p>
         <p>$ <span className='font-bold'>{section2Products[2].price}</span></p>
@@ -109,18 +109,18 @@ const HomeSection_2 = () => {
               }}
               onClick={()=>{navigate(`/product/${section2Products[2]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[2]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
+      </div>
       </div>
 
       <div className='flex flex-wrap justify-around items-center mb-16'>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      <div  className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[3].name}</p>
         <p>$ <span className='font-bold'>{section2Products[3].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -130,15 +130,15 @@ const HomeSection_2 = () => {
             }}
             onClick={()=>{navigate(`/product/${section2Products[3]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[3]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      </div>
+      <div  className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[4].name}</p>
         <p>$ <span className='font-bold'>{section2Products[4].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -148,15 +148,15 @@ const HomeSection_2 = () => {
               }}
               onClick={()=>{navigate(`/product/${section2Products[4]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[4]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
-      <motion.div variants={textVariant()} className='text-[18px] font-medium flex flex-col justify-center items-start'>
+      </div>
+      <div  className='text-[18px] font-medium flex flex-col justify-center items-start'>
         <p>{section2Products[5].name}</p>
         <p>$ <span className='font-bold'>{section2Products[5].price}</span></p>
         <p>⭐⭐⭐</p>
@@ -166,14 +166,14 @@ const HomeSection_2 = () => {
               }}
               onClick={()=>{navigate(`/product/${section2Products[5]._id}`)}}
             >
-        <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
+        <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className='h-[35px] rounded-lg text-[17px] px-4 w-auto p-2 text-black bg-green-600 hover:bg-green-700 my-4 mx-auto' onClick={()=>{handleAddCart(section2Products[5]._id)}}>Add To Bucket</motion.button>
-      </motion.div>
+      </div>
       </div>
       </div>}
     </>

@@ -33,6 +33,7 @@ function SwiperComponent() {
           window.alert('error in fetching products of section1')
           }
   }
+  
   useEffect(()=>{
     getSection1()
   },[])
@@ -63,19 +64,19 @@ function SwiperComponent() {
       >
           <SwiperSlide>
           <div className=' mt-5 h-[430px] w-[340px]'>
-          <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[0]._id}`} />
+          <SwipeCard id={section3Products[0]._id} src={`http://localhost:8000/api/product/photo/${section3Products[0]._id}`} />
           </div>
           </SwiperSlide>
       
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[1]._id}`} />
+        <SwipeCard id={section3Products[1]._id} src={`http://localhost:8000/api/product/photo/${section3Products[1]._id}`} />
         </div>
           
         </SwiperSlide>
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[2]._id}`} />
+        <SwipeCard id={section3Products[2]._id} src={`http://localhost:8000/api/product/photo/${section3Products[2]._id}`} />
         </div>
          
         </SwiperSlide>
@@ -83,13 +84,13 @@ function SwiperComponent() {
        
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[3]._id}`} />
+        <SwipeCard id={section3Products[3]._id} src={`http://localhost:8000/api/product/photo/${section3Products[3]._id}`} />
         </div>
          
         </SwiperSlide>       
         <SwiperSlide>
         <div className=' mt-5 h-[430px] w-[340px]'>
-        <SwipeCard src={`http://localhost:8000/api/product/photo/${section3Products[4]._id}`} />
+        <SwipeCard id={section3Products[4]._id} src={`http://localhost:8000/api/product/photo/${section3Products[4]._id}`} />
         </div>
         
         </SwiperSlide>

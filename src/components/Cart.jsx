@@ -75,9 +75,7 @@ const Cart = () => {
   }
 
   useEffect( () => {
-    if(!user){
-      // navigate('/login')
-    }
+    
     getCartProducts()
     
  }, [user]);

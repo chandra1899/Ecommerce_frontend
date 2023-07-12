@@ -61,7 +61,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[0]._id}`)}}
             >
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[0]._id}`} alt="" className='h-[250px] m-auto'/>
@@ -80,7 +81,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[1]._id}`)}}
             >
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[1]._id}`} alt="" className='h-[250px] m-auto'/>
@@ -103,7 +105,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[2]._id}`)}}
             >
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[2]._id}`} alt="" className='h-[250px] m-auto' />
@@ -121,7 +124,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[3]._id}`)}}
             >
 
         <img src={`http://localhost:8000/api/product/photo/${section4Products[3]._id}`} alt="" className='h-[250px] m-auto' />
@@ -140,7 +144,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] m-auto'
+            className='h-[250px] m-auto cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[4]._id}`)}}
             >
 
         <img src={`http://localhost:8000/api/product/photo/${section4Products[4]._id}`} alt="" className='h-[250px] m-auto'/>
@@ -163,7 +168,8 @@ const MidelSwiper = () => {
              whileHover={{
               scale:1.1
             }}
-            className='h-[250px] mx-auto my-4'
+            className='h-[250px] mx-auto my-4 cursor-pointer'
+            onClick={()=>{navigate(`/product/${section4Products[5]._id}`)}}
             >
             <img src={`http://localhost:8000/api/product/photo/${section4Products[5]._id}`} alt="" className='h-[300px] w-[80vw] m-auto object-contain'/>
             </motion.div>

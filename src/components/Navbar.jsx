@@ -91,7 +91,7 @@ const Navbar = () => {
       {!user && <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[140px]' onClick={()=>{navigate('/login')}}>Hello, sign-in accounts</p>}
      {user && <p className='font-medium text-[18px] hover:text-red-600 cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[140px]' onClick={logout}>Sign out</p>}
 
-      <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[120px]' onClick={()=>{navigate('/orders')}}>Returns<span className='font-bold'>& orders</span></p>
+      <p className='font-medium text-[1.45rem] cursor-pointer flex flex-wrap hover:border-[1px] hover:border-white justify-center items-center p-2 h-[100%] w-[120px]' onClick={()=>{if(user){navigate('/orders')}else{navigate('/login')}}} >Returns<span className='font-bold'>& orders</span></p>
 
       <div className='relative w-[100px] cursor-pointer flex h-[100%] hover:border-[1px] hover:border-white justify-center items-center' onClick={()=>{if(user){navigate('/cart')}else{navigate('/login')}}}>
         <span className='absolute top-0 flex justify-center items-center right-2 h-[50%] bg-red-600 text-white rounded-full p-2'>{cartNo}</span>

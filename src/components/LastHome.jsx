@@ -67,6 +67,7 @@ const LastHome = () => {
 
         <img src={`http://localhost:8000/api/product/photo/${section6Products[0]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section6Products[0].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -87,6 +88,7 @@ const LastHome = () => {
 
     <img src={`http://localhost:8000/api/product/photo/${section6Products[1]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section6Products[1].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -107,6 +109,7 @@ const LastHome = () => {
 
     <img src={`http://localhost:8000/api/product/photo/${section6Products[2]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section6Products[2].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

@@ -73,6 +73,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[0]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[0].quantity}</span>
         <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -91,6 +92,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[1]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[1].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -111,6 +113,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[2]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[2].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -132,6 +135,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[3]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[3].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -150,6 +154,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[4]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[4].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -168,6 +173,7 @@ const HomeSection_2 = () => {
             >
         <img src={`http://localhost:8000/api/product/photo/${section2Products[5]._id}?${Date.now()}`} alt="" className='h-[230px] w-[230px] object-contain cursor-pointer'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section2Products[4].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

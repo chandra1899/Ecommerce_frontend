@@ -67,6 +67,7 @@ const MidelSwiper = () => {
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[0]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[0].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -87,6 +88,7 @@ const MidelSwiper = () => {
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[1]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[1].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -111,6 +113,7 @@ const MidelSwiper = () => {
 
             <img src={`http://localhost:8000/api/product/photo/${section4Products[2]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[2].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -130,6 +133,7 @@ const MidelSwiper = () => {
 
         <img src={`http://localhost:8000/api/product/photo/${section4Products[3]._id}`} alt="" className='h-[250px] m-auto' />
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[3].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -150,6 +154,7 @@ const MidelSwiper = () => {
 
         <img src={`http://localhost:8000/api/product/photo/${section4Products[4]._id}`} alt="" className='h-[250px] m-auto'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[4].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -173,6 +178,7 @@ const MidelSwiper = () => {
             >
             <img src={`http://localhost:8000/api/product/photo/${section4Products[5]._id}`} alt="" className='h-[300px] w-[80vw] m-auto object-contain'/>
             </motion.div>
+            <span className='text-red-600 text-[14px] mx-auto'>available:- {section4Products[5].quantity}</span>
             <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

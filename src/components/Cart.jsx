@@ -48,8 +48,7 @@ const Cart = () => {
           // if(data.products!==undefined)
           dispatch(cartProductsActions.setCartProducts(data.cartProducts))
           dispatch(cartNumberAction.setCartNumber(data.cartProducts.length))
-          // setCartProducts(data.cartProducts)
-          console.log(data.cartProducts);
+          setSubTotal()
         }
   }
   const setSubTotal=()=>{
@@ -59,26 +58,44 @@ const Cart = () => {
     })
     dispatch(subTotalActions.setSubTotal(total))
   }
+
+  const hadleEmptycart=async ()=>{
+    let res= await fetch(`http://localhost:8000/api/cart/emptycart`,{
+      method:'POST',
+      headers:{
+        'Access-Control-Allow-Origin': '*',
+        Accept:"application/json",
+        "Content-Type":"application/json"
+      },
+      credentials:'include', 
+    });
+    if(res.status===200){
+      getCartProducts();
+    }
+  }
+
   useEffect( () => {
     if(!user){
       // navigate('/login')
     }
     getCartProducts()
-    setSubTotal()
+    
  }, [user]);
   return (
     <div className='mt-[50px] flex flex-col justify-center items-center font-medium p-12'>
       {cartProducts.length!==0 && cartProducts.map((product,index)=>(
         <CartProduct product={product} index={index}/>
       ))}
-      <div className='flex flex-row items-center justify-between w-[60vw] mt-12'>
+      {cartProducts.length!==0 && <div className='flex flex-row items-center justify-between w-[60vw] mt-12'>
         <p className='text-[28px]'>Sub Total:-$ {subTotal}</p>
         <div className='text-white'>
-          <button className='h-[35px] rounded-lg bg-pink-700 hover:bg-pink-800 w-[140px] mx-4'>Empty Cart</button>
+          <button className='h-[35px] rounded-lg bg-pink-700 hover:bg-pink-800 w-[140px] mx-4' onClick={()=>{hadleEmptycart()}}>Empty Cart</button>
           <button className='h-[35px] rounded-lg bg-blue-700 hover:bg-blue-800 w-[140px] mx-4' onClick={()=>{handleCheckOut()}}>Checkout</button>
         </div>
 
-      </div>
+      </div>}
+      {cartProducts.length===0 && <p className='text-red-600 mt-[10%] font-medium text-[30px]'>.... Cat is Empty ....</p>}
+      <p className='text-[16px] mt-5 text-[#4381fe] hover:text-[#194eb9] hover:underline cursor-pointer' onClick={()=>{navigate('/')}}><span className='text-[30px]'> &larr;</span> Continue shopping</p>
       
     </div>
   )

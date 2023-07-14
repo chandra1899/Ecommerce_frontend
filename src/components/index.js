@@ -22,6 +22,7 @@ import Checkout from './Checkout'
 import ShippinAddressForm from './ShippingAddressForm'
 import CheckoutSuccess from './CHeckoutSuccess'
 import OrderItem from './OrderItem'
+import Products from './Products'
 
 export {
     Home,
@@ -47,5 +48,6 @@ export {
     Checkout,
     ShippinAddressForm,
     CheckoutSuccess,
-    OrderItem
+    OrderItem,
+    Products
 }

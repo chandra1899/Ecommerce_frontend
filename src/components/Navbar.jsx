@@ -3,12 +3,13 @@ import menu from '../assets/menu.svg'
 import close from '../assets/close.svg'
 import { useSelector,useDispatch} from 'react-redux'
 import { sideBar } from '../store/sideBarSlice'
-import search from '../assets/search.png'
+import search_icon from '../assets/search.png'
 import cart from '../assets/cart.png'
 import address from '../assets/address.png'
 import { useNavigate } from 'react-router-dom'
 import { SideBar} from '.'
 import {userState} from '../store/user'
+import { filteractions } from '../store/filterSLice'
 
 const Navbar = () => {
   const navigate=useNavigate()
@@ -18,6 +19,7 @@ const Navbar = () => {
   const cartProducts=useSelector(state=>state.cartProducts.cartProducts)
   const cartNo=useSelector(state=>state.cartNumber.cartNumber)
   const [cartNumber,setCartNumber]=useState(cartProducts.length)
+  const [search,setSearch]=useState('');
 
   const calluser=async ()=>{
     try {
@@ -66,6 +68,23 @@ const Navbar = () => {
     }
   }
 
+  const submit=()=>{
+    // console.log(search);
+    navigate('/products')
+    dispatch(filteractions.setfilter([search]))
+  }
+
+  const handleChange=(e)=>{
+    setSearch(e.target.value);
+  }
+
+  const handleEnter=(e)=>{
+    // console.log(e.key);
+    if(e.key==='Enter'){
+      submit();
+    }
+  }
+
   return (
     <div className='w-[100vw] h-[50px] fixed top-0 text-white bg-black flex items-center justify-around px-2 z-10'>
       <img src={isSideOpen?close:menu} alt="menu" className='h-[35px] w-[34px] cursor-pointer hover:border-[1px] hover:border-white z-[3]' onClick={()=>{dispatch(sideBar.toggle())}}/>
@@ -82,9 +101,9 @@ const Navbar = () => {
       </div>
 
       <div className='h-[75%] w-[33%] flex flex-row'>
-      <input type="text" className='h-[100%] w-[80%] p-2 px-4 text-black outline-none' placeholder='Search in ecommerce'/>
+      <input type="text" className='h-[100%] w-[80%] p-2 px-4 text-black outline-none' placeholder='Search in ecommerce' onChange={handleChange} onKeyUp={handleEnter}/>
       <div className='h-[100%] w-[45px] bg-green-600 hover:bg-green-700 cursor-pointer flex justify-center items-center'>
-        <img src={search} alt="search-icon" className='h-[80%]' />
+        <img src={search_icon} alt="search-icon" className='h-[80%]' onClick={submit}/>
       </div>
       </div>
 

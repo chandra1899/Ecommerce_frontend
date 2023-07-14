@@ -13,3 +13,7 @@ td{
 /* tr,th{
     height: 50px;
   } */
+
+  /* #reviewInput:focus ~ .reviewLabel{
+    top:0
+  } */

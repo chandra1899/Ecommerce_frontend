@@ -7,14 +7,30 @@ import CartProduct from './CartProduct'
 import {subTotalActions} from '../store/subTotalSlice'
 import { useNavigate } from 'react-router-dom'
 
+//back drop
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
+
+
 const Cart = () => {
   const navigate=useNavigate()
+  const classes=useStyles();
+  const [loading,setLoading]=useState(false)
   const user=useSelector(state=>state.user.user)
   const cartProducts=useSelector(state=>state.cartProducts.cartProducts)
  const dispatch=useDispatch()
  const subTotal=useSelector(state=>state.subTotal.subTotal)
  
   const handleCheckOut=async()=>{
+    setLoading(true)
     let res= await fetch(`http://localhost:8000/api/stripe/create-checkout-session`,{
           method:'post',
           headers:{
@@ -30,10 +46,12 @@ const Cart = () => {
         let data=await res.json();
         if(res.status===200){
           // navigate(data.url)
+          setLoading(false)
           window.location.href=data.url
         }
   }
   const getCartProducts=async ()=>{
+    setLoading(true)
     let res= await fetch(`http://localhost:8000/api/cart/getProducts`,{
           method:'GET',
           headers:{
@@ -45,6 +63,7 @@ const Cart = () => {
         });
         let data=await res.json();
         if(res.status===200){
+          setLoading(false)
           // if(data.products!==undefined)
           dispatch(cartProductsActions.setCartProducts(data.cartProducts))
           dispatch(cartNumberAction.setCartNumber(data.cartProducts.length))
@@ -60,6 +79,7 @@ const Cart = () => {
   }
 
   const hadleEmptycart=async ()=>{
+    setLoading(true)
     let res= await fetch(`http://localhost:8000/api/cart/emptycart`,{
       method:'POST',
       headers:{
@@ -70,6 +90,7 @@ const Cart = () => {
       credentials:'include', 
     });
     if(res.status===200){
+      setLoading(false)
       getCartProducts();
     }
   }
@@ -80,6 +101,7 @@ const Cart = () => {
     
  }, [user]);
   return (
+   <>
     <div className='mt-[50px] flex flex-col justify-center items-center font-medium p-12'>
       {cartProducts.length!==0 && cartProducts.map((product,index)=>(
         <CartProduct product={product} index={index}/>
@@ -96,6 +118,11 @@ const Cart = () => {
       <p className='text-[16px] mt-5 text-[#4381fe] hover:text-[#194eb9] hover:underline cursor-pointer' onClick={()=>{navigate('/')}}><span className='text-[30px]'> &larr;</span> Continue shopping</p>
       
     </div>
+    {loading && <Backdrop className={classes.backdrop} open>
+        <CircularProgress color="inherit" />
+      </Backdrop>}
+      {/* <Footer/> */}
+    </>
   )
 }
 

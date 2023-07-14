@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { Footer, PhotoSlider,ProductCard ,SwiperComponent1,SwiperComponent2,MidelSwiper,LastHome,HomeSection_2} from '.'
+import { Footer, PhotoSlider,SwiperComponent1,SwiperComponent2,MidelSwiper,LastHome,HomeSection_2} from '.'
 import {motion} from 'framer-motion'
 import {fadeIn,textVariant} from '../utils/motion'
 import { SectionWrapper } from '../hoc'
@@ -9,7 +9,21 @@ import oven_icon from '../assets/oven_icon.png'
 import washingMachine_icon from '../assets/washingMachine_icon.png'
 import { useNavigate } from 'react-router-dom'
 
+//back drop
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
+
 const Card=({product,index,src})=>{
+  const classes=useStyles();
+  const [loading,setLoading]=useState(false)
   const navigate=useNavigate();
   const [section1Products,setSection1Products]=useState([]);
   const getSection1=async ()=>{
@@ -57,6 +71,10 @@ const Card=({product,index,src})=>{
       <p className='font-medium flex flex-row justify-between items-center px-4 my-4 break-words'>Description</p>
     </motion.div>
     </motion.div>
+    {loading && <Backdrop className={classes.backdrop} open>
+        <CircularProgress color="inherit" />
+      </Backdrop>}
+      {/* <Footer/> */}
     </div>
   )
 }
@@ -101,6 +119,7 @@ const Home = () => {
       <LastHome/>
       <Footer/>
     </div>
+   
     </div>
   )
 }

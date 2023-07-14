@@ -19,7 +19,8 @@ export const Navigation = () => (
   </motion.ul>
 );
 
-const itemIds = ['All products','men','women','smart watches','wall clocks','alarm clock','border','$ 0-20','$ 21-40','$ 41-60','$ 61-80','$ >80'];
+const itemIds = ['All products','men','women','smart watches','wall clocks','alarm clock'];
+// ,'$ 0-20','$ 21-40','$ 41-60','$ 61-80','$ >80'
 
 
 export default Navigation

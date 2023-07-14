@@ -8,6 +8,7 @@ import userReducer from './user'
 import cartProductReducer from './cartProductsSlice'
 import cartNumberReducer from './cartNumberSlice'
 import subTotalReducer from './subTotalSlice'
+import filterReducer from './filterSLice'
 
 const store=configureStore({
     reducer:{
@@ -19,7 +20,8 @@ const store=configureStore({
       user:userReducer,
       cartProducts:cartProductReducer,
       cartNumber:cartNumberReducer,
-      subTotal:subTotalReducer
+      subTotal:subTotalReducer,
+      filter:filterReducer
     }
 });
 

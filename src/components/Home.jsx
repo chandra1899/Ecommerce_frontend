@@ -58,7 +58,7 @@ const Card=({product,index,src})=>{
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
-      onClick={()=>{navigate(`/product/${section1Products[parseInt(index)]._id}`)}}
+      onClick={()=>{navigate(`/product/${section1Products[parseInt(index)-1]._id}`)}}
     key={product._id} className='h-auto p-2 w-[250px] bg-white shadow-xl rounded-xl cursor-pointer'>
      <div className='flex justify-center items-center my-4'>
      <img src={src} alt={product.name} className='h-[180px] object-cover p-2' />
